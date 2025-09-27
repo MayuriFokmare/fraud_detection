@@ -1,0 +1,13 @@
+Models,Rule,Sensitivity,Specificity
+"('log_reg', 'random_forest')",1ooN,0.6802325581395349,0.9958951689295864
+"('log_reg', 'random_forest')",Majority,0.6802325581395349,0.9958951689295864
+"('log_reg', 'random_forest')",NooN,0.5406976744186046,1.0
+"('log_reg', 'xgboost')",1ooN,0.7267441860465116,0.9902115566782443
+"('log_reg', 'xgboost')",Majority,0.7267441860465116,0.9902115566782443
+"('log_reg', 'xgboost')",NooN,0.42441860465116277,1.0
+"('random_forest', 'xgboost')",1ooN,0.6511627906976745,0.994316387748658
+"('random_forest', 'xgboost')",Majority,0.6511627906976745,0.994316387748658
+"('random_forest', 'xgboost')",NooN,0.38372093023255816,1.0
+"('log_reg', 'random_forest', 'xgboost')",1ooN,0.7383720930232558,0.9902115566782443
+"('log_reg', 'random_forest', 'xgboost')",Majority,0.5813953488372093,1.0
+"('log_reg', 'random_forest', 'xgboost')",NooN,0.38372093023255816,1.0

@@ -1,0 +1,74 @@
+<h3 class="page-title">Analyst Dashboard</h3>
+
+<div class="dashboard">
+
+  <!-- Fraud Summary Cards -->
+  <div class="card-container">
+    <div class="card" *ngFor="let item of fraudSummary">
+      <h3>{{ item.fraud_type | titlecase }}</h3>
+      <p>Total: {{ item.total_transactions }}</p>
+      <canvas #fraudCanvas></canvas>
+    </div>
+  </div>
+
+  <!-- Merchant Chart + Fraudulent Records -->
+  <div class="merchant-section">
+    
+    <!-- Chart -->
+    <div class="chart-container">
+      <h3>Fraud by Merchant</h3>
+      <canvas id="merchantChart"></canvas>
+    </div>
+
+    <!-- Fraudulent Records -->
+    <div class="fraudulent-section">
+
+      <!-- Filter + Export -->
+      <div class="table-actions">
+        <div>
+         <br> <label>Fraud Type:</label>
+          <select [(ngModel)]="selectedFraudType" (change)="applyFilter()">
+            <option value="">All</option>
+            <option *ngFor="let f of fraudSummary" [value]="f.fraud_type">
+              {{ f.fraud_type | titlecase }}
+            </option>
+          </select>
+        </div>
+        <button (click)="exportCSV()">Export CSV</button>
+      </div>
+
+      <!-- PrimeNG DataTable -->
+      <p-table [value]="filteredRecords"
+               [paginator]="true"
+               [rows]="12"
+               [rowsPerPageOptions]="[10,20]"
+               [showPageLinks]="false"
+               [responsiveLayout]="'scroll'">
+
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Transaction ID</th>
+            <th>Merchant</th>
+            <th>Fraud Type</th>
+            <th>Text</th>
+            <th>Status</th>
+          </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-record>
+          <tr>
+            <td>{{ record.transaction_id }}</td>
+            <td>{{ record.merchant_name }}</td>
+            <td>{{ record.fraud_type }}</td>
+            <td>{{ record.captured_text }}</td>
+            <td>
+              <span class="fraud-flag" *ngIf="record.status">FRAUD</span>
+              <span class="ok-flag" *ngIf="!record.status">REAL</span>
+            </td>
+          </tr>
+        </ng-template>
+
+      </p-table>
+    </div>
+  </div>
+</div>

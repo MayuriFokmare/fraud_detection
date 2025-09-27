@@ -1,0 +1,169 @@
+/* Full page wrapper */
+.login-wrapper {
+  display: flex;
+  height: 500px;          /* adjust or use 100vh for full screen */
+  width: 100%;            /* take full available width */
+  max-width: 1000px;      /* optional: keep it neat */
+  margin: 50px auto;      /* center horizontally */
+  overflow: hidden;       /* prevent overflow */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  margin-top: 150px;
+}
+
+/* Left side (Image/Illustration) */
+.login-left {
+  flex: 1;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  overflow: hidden;
+  background: #eef3ff;
+}
+
+.login-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* fills area, may crop edges */
+  display: block;
+}
+
+/* Right side (Form) */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+
+/* Form Container */
+.form-container {
+  width: 350px;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #1976d2;
+}
+
+/* Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* Login Button */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0d47a1;
+}
+
+.links {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #1976d2;
+  font-weight: 500;
+}
+
+/* --- Role Switch --- */
+.role-switch {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  border: 2px solid #1976d2;
+  border-radius: 25px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+
+.role-switch .highlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #1976d2;
+  transition: transform 0.3s;
+  z-index: 0;
+}
+
+.role-switch .highlight.admin {
+  transform: translateX(100%);
+}
+
+.role-switch .highlight.merchant {
+  transform: translateX(0);
+}
+
+.role-switch button {
+  flex: 1;
+  padding: 10px 25px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+  color: #1976d2;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+.role-switch.merchant button:nth-of-type(1),
+.role-switch.admin button:nth-of-type(2) {
+  color: #fff;
+  font-weight: bold;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;   /* stack vertically */
+    height: auto;             /* adjust height */
+    max-width: 90%;
+  }
+
+  .login-left,
+  .login-right {
+    flex: none;
+    width: 100%;
+    height: 250px;           /* image height on mobile */
+  }
+
+  .form-container {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+button {
+  width: 60%;
+  padding: 6px 10px;
+  font-size: 13px;
+}

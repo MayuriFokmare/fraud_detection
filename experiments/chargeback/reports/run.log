@@ -1,0 +1,26 @@
+2025-09-24 19:29:59,116 | INFO | Logging initialized at experiments/chargeback/reports/run.log
+2025-09-24 19:29:59,123 | INFO | Loaded data/chargeback/processed/df.csv with 11127 rows, 5 columns
+2025-09-24 19:29:59,127 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:29:59,127 | INFO | Feature engineering complete. Shape: (11127, 5)
+2025-09-24 19:35:18,714 | INFO | Logging initialized at experiments/chargeback/reports/run.log
+2025-09-24 19:36:05,288 | INFO | Logging initialized at experiments/chargeback/reports/run.log
+2025-09-24 19:36:05,293 | INFO | Loaded data/chargeback/processed/df.csv with 11127 rows, 5 columns
+2025-09-24 19:36:05,296 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:36:05,296 | INFO | Feature engineering complete. Shape: (11127, 5)
+2025-09-24 19:36:16,425 | INFO | Logging initialized at experiments/chargeback/reports/run.log
+2025-09-24 19:36:16,430 | INFO | Loaded data/chargeback/processed/df.csv with 11127 rows, 5 columns
+2025-09-24 19:36:16,433 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:36:16,433 | INFO | Feature engineering complete. Shape: (11127, 5)
+2025-09-24 19:50:42,639 | INFO | Logging initialized at experiments/chargeback/reports/run.log
+2025-09-24 19:50:42,644 | INFO | Loaded data/chargeback/processed/df.csv with 11127 rows, 5 columns
+2025-09-24 19:50:42,646 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:50:42,646 | INFO | Feature engineering complete. Shape: (11127, 5)
+2025-09-24 19:50:42,702 | INFO | Saved model: experiments/chargeback/models/log_reg.joblib
+2025-09-24 19:50:43,858 | INFO | Saved model: experiments/chargeback/models/random_forest.joblib
+2025-09-24 19:50:44,086 | INFO | Saved model: experiments/chargeback/models/xgboost.joblib
+2025-09-24 19:50:44,288 | INFO | log_reg | Acc=0.979 Prec=0.898 Rec=0.669 F1=0.767 AUC=0.928
+2025-09-24 19:50:44,650 | INFO | random_forest | Acc=0.977 Prec=1.000 Rec=0.552 F1=0.712 AUC=0.932
+2025-09-24 19:50:44,755 | INFO | xgboost | Acc=0.968 Prec=0.822 Rec=0.483 F1=0.608 AUC=0.912
+2025-09-24 19:50:44,993 | INFO | Saved ensemble results: detailed and averaged.
+2025-09-24 19:50:45,321 | INFO | Ensemble metrics saved at experiments/chargeback/ensembles/ensemble_metrics.csv
+2025-09-24 19:50:45,321 | INFO | Finished experiment for chargeback

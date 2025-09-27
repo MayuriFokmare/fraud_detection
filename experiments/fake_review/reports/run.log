@@ -1,0 +1,117 @@
+2025-09-24 17:31:47,248 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:31:47,324 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:31:47,348 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:31:47,348 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:31:47,444 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 17:32:11,557 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 17:32:11,788 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 17:32:11,850 | INFO | log_reg | Acc=0.491 Prec=0.489 Rec=0.436 F1=0.461 AUC=0.484
+2025-09-24 17:32:26,416 | INFO | random_forest | Acc=0.495 Prec=0.495 Rec=0.508 F1=0.501 AUC=0.492
+2025-09-24 17:32:26,487 | INFO | xgboost | Acc=0.494 Prec=0.494 Rec=0.516 F1=0.505 AUC=0.492
+2025-09-24 17:37:01,847 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:37:01,916 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:37:01,944 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:37:01,944 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:37:02,040 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 17:37:26,298 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 17:37:26,534 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 17:37:26,594 | INFO | log_reg | Acc=0.491 Prec=0.489 Rec=0.436 F1=0.461 AUC=0.484
+2025-09-24 17:37:41,606 | INFO | random_forest | Acc=0.495 Prec=0.495 Rec=0.508 F1=0.501 AUC=0.492
+2025-09-24 17:37:41,681 | INFO | xgboost | Acc=0.494 Prec=0.494 Rec=0.516 F1=0.505 AUC=0.492
+2025-09-24 17:37:56,755 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 17:37:56,755 | INFO | Finished experiment for fake_review
+2025-09-24 17:51:16,388 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:51:16,457 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:51:16,484 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:51:16,484 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:51:30,142 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:51:30,206 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:51:30,230 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:51:30,230 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:52:27,653 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:52:27,715 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:52:27,739 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:52:27,739 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:52:29,196 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 17:52:41,689 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 17:52:47,342 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 17:52:48,001 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 17:52:49,034 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 17:52:49,700 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 17:52:52,015 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 17:52:52,015 | INFO | Finished experiment for fake_review
+2025-09-24 17:59:16,572 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 17:59:16,653 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 17:59:16,678 | INFO | Dropped 12 duplicate rows
+2025-09-24 17:59:16,678 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 17:59:18,102 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 17:59:30,718 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 17:59:36,361 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 17:59:37,610 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 17:59:38,706 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 17:59:39,456 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 17:59:41,786 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 17:59:41,786 | INFO | Finished experiment for fake_review
+2025-09-24 18:18:27,923 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 18:18:27,990 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 18:18:28,014 | INFO | Dropped 12 duplicate rows
+2025-09-24 18:18:28,015 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 18:18:29,473 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 18:18:42,145 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 18:18:47,960 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 18:18:48,831 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 18:18:49,930 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 18:18:50,677 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 18:18:53,351 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 18:18:53,351 | INFO | Finished experiment for fake_review
+2025-09-24 18:31:47,572 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 18:31:47,635 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 18:31:47,661 | INFO | Dropped 12 duplicate rows
+2025-09-24 18:31:47,661 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 18:31:49,087 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 18:32:01,556 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 18:32:07,224 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 18:32:08,065 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 18:32:09,153 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 18:32:09,899 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 18:32:12,618 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 18:32:12,618 | INFO | Finished experiment for fake_review
+2025-09-24 18:41:52,410 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 18:41:52,480 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 18:41:52,506 | INFO | Dropped 12 duplicate rows
+2025-09-24 18:41:52,506 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 18:41:54,078 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 18:42:07,163 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 18:42:13,793 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 18:42:14,695 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 18:42:15,806 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 18:42:16,561 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 18:42:16,944 | INFO | Saved ensemble results: detailed and averaged.
+2025-09-24 18:42:19,350 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 18:42:19,350 | INFO | Finished experiment for fake_review
+2025-09-24 19:30:15,139 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 19:30:15,204 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 19:30:15,228 | INFO | Dropped 12 duplicate rows
+2025-09-24 19:30:15,228 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 19:30:16,680 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 19:30:29,216 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 19:30:34,869 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 19:30:35,731 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 19:30:36,825 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 19:30:37,563 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 19:30:37,946 | INFO | Saved ensemble results: detailed and averaged.
+2025-09-24 19:30:40,283 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 19:30:40,284 | INFO | Finished experiment for fake_review
+2025-09-24 19:34:33,726 | INFO | Logging initialized at experiments/fake_review/reports/run.log
+2025-09-24 19:34:33,789 | INFO | Loaded data/fake_review/processed/fake-reviews-dataset.csv with 40432 rows, 4 columns
+2025-09-24 19:34:33,813 | INFO | Dropped 12 duplicate rows
+2025-09-24 19:34:33,813 | INFO | Feature engineering complete. Shape: (40420, 4)
+2025-09-24 19:34:35,253 | INFO | Saved model: experiments/fake_review/models/log_reg.joblib
+2025-09-24 19:34:47,811 | INFO | Saved model: experiments/fake_review/models/random_forest.joblib
+2025-09-24 19:34:53,443 | INFO | Saved model: experiments/fake_review/models/xgboost.joblib
+2025-09-24 19:34:54,278 | INFO | log_reg | Acc=0.916 Prec=0.915 Rec=0.917 F1=0.916 AUC=0.974
+2025-09-24 19:34:55,404 | INFO | random_forest | Acc=0.892 Prec=0.918 Rec=0.862 F1=0.889 AUC=0.959
+2025-09-24 19:34:56,150 | INFO | xgboost | Acc=0.904 Prec=0.920 Rec=0.886 F1=0.903 AUC=0.970
+2025-09-24 19:34:56,525 | INFO | Saved ensemble results: detailed and averaged.
+2025-09-24 19:34:58,837 | INFO | Ensemble metrics saved at experiments/fake_review/ensembles/ensemble_metrics.csv
+2025-09-24 19:34:58,837 | INFO | Finished experiment for fake_review

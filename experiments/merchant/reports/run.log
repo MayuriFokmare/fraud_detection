@@ -1,0 +1,17 @@
+2025-09-24 19:37:07,483 | INFO | Logging initialized at experiments/merchant/reports/run.log
+2025-09-24 19:37:07,486 | INFO | Loaded data/merchant/processed/Fraudulent_online_shops_dataset.csv with 1140 rows, 26 columns
+2025-09-24 19:37:07,487 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:37:07,487 | INFO | Feature engineering complete. Shape: (1140, 26)
+2025-09-24 19:53:00,533 | INFO | Logging initialized at experiments/merchant/reports/run.log
+2025-09-24 19:53:00,536 | INFO | Loaded data/merchant/processed/Fraudulent_online_shops_dataset.csv with 1140 rows, 26 columns
+2025-09-24 19:53:00,537 | INFO | Dropped 0 duplicate rows
+2025-09-24 19:53:00,537 | INFO | Feature engineering complete. Shape: (1140, 26)
+2025-09-24 19:53:00,553 | INFO | Saved model: experiments/merchant/models/log_reg.joblib
+2025-09-24 19:53:00,649 | INFO | Saved model: experiments/merchant/models/random_forest.joblib
+2025-09-24 19:53:00,773 | INFO | Saved model: experiments/merchant/models/xgboost.joblib
+2025-09-24 19:53:00,955 | INFO | log_reg | Acc=0.918 Prec=0.920 Rec=0.920 F1=0.920 AUC=0.976
+2025-09-24 19:53:01,048 | INFO | random_forest | Acc=0.909 Prec=0.939 Rec=0.879 F1=0.908 AUC=0.974
+2025-09-24 19:53:01,134 | INFO | xgboost | Acc=0.933 Prec=0.942 Rec=0.925 F1=0.933 AUC=0.984
+2025-09-24 19:53:01,311 | INFO | Saved ensemble results: detailed and averaged.
+2025-09-24 19:53:01,340 | INFO | Ensemble metrics saved at experiments/merchant/ensembles/ensemble_metrics.csv
+2025-09-24 19:53:01,340 | INFO | Finished experiment for merchant

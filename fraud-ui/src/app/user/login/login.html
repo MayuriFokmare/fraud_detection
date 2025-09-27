@@ -1,0 +1,33 @@
+<div class="login-wrapper">
+  <!-- Left Side (Image / Illustration) -->
+  <div class="login-left">
+    <img src="assets/login-image.png" alt="Login" />
+  </div>
+
+  <!-- Right Side (Form) -->
+  <div class="login-right">
+    <div class="form-container">
+      <h2>Fraud Shield - Login</h2>
+
+      <!-- Role Switch -->
+      <div class="role-switch" [ngClass]="role">
+        <span class="highlight" [ngClass]="role"></span>
+        <button type="button" (click)="role = 'merchant'">Merchant</button>
+        <button type="button" (click)="role = 'admin'">Admin</button>
+      </div>
+
+      <!-- Login Form -->
+      <form (ngSubmit)="onLogin()">
+        <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+        <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Links -->
+      <div class="links">
+        <a routerLink="/register">New User?</a> | 
+        <a routerLink="/forgotPassword">Forgot Password?</a>
+      </div>
+    </div>
+  </div>
+</div>
