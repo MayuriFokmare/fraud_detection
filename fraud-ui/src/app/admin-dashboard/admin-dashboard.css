@@ -110,7 +110,7 @@
    ========================= */
 :host ::ng-deep .p-table {
   width: 100%;
-  border: none;              /* remove outer border */
+  border: none;              
   border-radius: 8px;
   overflow: hidden;
   font-size: 14px;
@@ -123,13 +123,13 @@
   font-weight: bold;
   text-align: left;
   padding: 10px;
-  border-bottom: 2px solid #ddd; /* keep header line only */
+  border-bottom: 2px solid #ddd; 
 }
 
 /* Body - clean rows */
 :host ::ng-deep .p-table tbody td {
   padding: 10px 12px;
-  border: none;              /* no black row lines */
+  border: none;              
 }
 :host ::ng-deep .p-table tbody tr:hover {
   background-color: #f9f9f9;

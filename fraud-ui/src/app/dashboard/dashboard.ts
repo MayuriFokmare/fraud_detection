@@ -81,13 +81,12 @@ export class Dashboard implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.username = localStorage.getItem('username') || 'Unknown User';
 
-    // Load merchant summary on page load (example merchant; replace if needed)
     this.fraudService.getMerchantFraudSummary('Retail')
       .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: (res) => {
           this.merchantSummary = res;
-          this.renderMerchantDonut(); // draw pre-detection donut
+          this.renderMerchantDonut(); 
         },
         error: (err) => console.error('Error fetching merchant summary', err)
       });
@@ -196,7 +195,7 @@ export class Dashboard implements OnInit, OnDestroy {
     }, 0);
   }
 
-  /** ===== Post-detection donut (your existing one) ===== */
+  /** ===== Post-detection donut  ===== */
   private renderPostDetectionDonut() {
     if (!this.summary) return;
 
@@ -258,7 +257,6 @@ export class Dashboard implements OnInit, OnDestroy {
     }, 0);
   }
 
-  // --- Export CSV ---
   exportCSV() {
     if (!this.transactions?.length) return;
     const csv = [Object.keys(this.transactions[0]), ...this.transactions.map(o => Object.values(o))]
@@ -269,7 +267,6 @@ export class Dashboard implements OnInit, OnDestroy {
     a.click();
   }
 
-  // --- Close Dashboard ---
   closeDashboard() {
     this.fraudService.clearTemp().subscribe({
       next: () => {
@@ -278,7 +275,6 @@ export class Dashboard implements OnInit, OnDestroy {
         this.donutChart?.destroy(); this.donutChart = null;
         this.barChart?.destroy(); this.barChart = null;
 
-        // Re-render pre-detection donut if we have merchantSummary
         if (this.merchantSummary) this.renderMerchantDonut();
 
       },

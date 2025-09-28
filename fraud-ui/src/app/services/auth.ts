@@ -17,7 +17,7 @@ export class AuthService {
           localStorage.setItem('access_token', res.access);
           localStorage.setItem('refresh_token', res.refresh);
 
-          // ✅ Save full user object or fallback
+          //  Save full user object or fallback
           if (res.user) {
             localStorage.setItem('user', JSON.stringify(res.user));
 
