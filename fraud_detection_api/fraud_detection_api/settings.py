@@ -28,13 +28,13 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
-    "44.217.121.117",                             
-    "ec2-44-217-121-117.compute-1.amazonaws.com" 
+    "35.175.45.1",                             
+    "ec2-35-175-45-1.compute-1.amazonaws.com" 
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://44.217.121.117",
-    "http://ec2-44-217-121-117.compute-1.amazonaws.com",
+    "http://35.175.45.1",
+    "http://ec2-35-175-45-1.compute-1.amazonaws.com",
 ]
 
 
