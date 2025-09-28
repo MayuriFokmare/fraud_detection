@@ -14,15 +14,12 @@ def get_next_transaction_number():
 def clean_for_json(data: dict) -> dict:
     clean = {}
     for k, v in data.items():
-        # Convert numpy types to Python scalars
         if isinstance(v, (np.generic,)):
             v = v.item()
 
-        # Replace NaN/NaT with None
         if pd.isna(v):
             v = None
 
-        # Trim strings
         if isinstance(v, str):
             v = v.strip()
 

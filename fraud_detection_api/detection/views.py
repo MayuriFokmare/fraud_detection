@@ -115,7 +115,6 @@ class FraudDetectionUploadView(APIView):
         file_obj = request.FILES['file']
         df = pd.read_csv(file_obj)
 
-        # Ensure feature engineering is applied
         df = fe.engineer(df)
 
         merchant_name_from_request = request.data.get("merchant_name", None)
@@ -144,7 +143,6 @@ class FraudDetectionUploadView(APIView):
                 "fraud_type": fraud_type,
             }
 
-            # Optional: captured_text logic
             if fraud_type == "fake_review":
                 response_record["text"] = row.get("text_", None)
                 fraud_prediction.captured_text = row.get("text_", None)
@@ -158,7 +156,7 @@ class FraudDetectionUploadView(APIView):
                 response_record["text"] = row.get("Card Number", None)
                 fraud_prediction.captured_text = row.get("Card Number", None)
 
-            # Run predictions for each model
+            # predictions for each model
             for model_name in available_models:
                 service = FraudService(fraud_type, model_name=model_name)
                 _, df_pred = service.predict(pd.DataFrame([row]))
@@ -177,10 +175,10 @@ class FraudDetectionUploadView(APIView):
                 setattr(fraud_prediction, model_name, pred_value)
                 setattr(fraud_prediction, f"{model_name}_probability", prob_value)
 
-                # For overall status, take RandomForest as base
+                # RandomForest as base
                 if model_name == "random_forest":
                     fraud_prediction.status = pred_value
-                    response_record["flag"] = pred_value  # 👈 Add to response
+                    response_record["flag"] = pred_value
 
             records.append(fraud_prediction)
             responses.append(response_record)
@@ -245,7 +243,6 @@ class FraudPredictionTempSummaryView(APIView):
                 status=status.HTTP_200_OK
             )
 
-        # Since both fraud_type and merchant_name are unique in this table
         fraud_type = records.first().fraud_type
         merchant_name = records.first().merchant_name
 

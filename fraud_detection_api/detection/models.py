@@ -26,7 +26,7 @@ class FraudPrediction(models.Model):
     transaction_id = models.CharField(max_length=50, unique=True, null=True, blank=True)
     merchant_name = models.CharField(max_length=100, null=True, blank=True)
     captured_text = models.TextField(null=True, blank=True)
-    status = models.BooleanField(default=False)  # True = fraud, False = non-fraud
+    status = models.BooleanField(default=False)
 
     # Model predictions
     random_forest = models.BooleanField(null=True, blank=True)
