@@ -36,7 +36,7 @@ export class AdminDashboard implements OnInit {
   selectedFraudType: string = '';
   rows = 10;
 
-  private baseUrl = environment.apiUrl;   // ✅ dynamic API base URL
+  private baseUrl = environment.apiUrl;   
 
   @ViewChildren('fraudCanvas') fraudCanvasList!: QueryList<ElementRef<HTMLCanvasElement>>;
 
