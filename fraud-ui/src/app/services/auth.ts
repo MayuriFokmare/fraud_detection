@@ -9,9 +9,12 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   private apiUrl = environment.apiUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log(' AuthService initialized with API URL:', this.apiUrl);
+  }
 
   login(email: string, password: string): Observable<any> {
+    console.log(' Calling login API:', `${this.apiUrl}/auth/login/`);
     return this.http.post(`${this.apiUrl}/auth/login/`, { email, password }).pipe(
       tap((res: any) => {
         if (res.access && res.refresh) {
@@ -34,6 +37,7 @@ export class AuthService {
   }
 
   register(userData: any): Observable<any> {
+    console.log(' Calling register API:', `${this.apiUrl}/auth/register/`);
     return this.http.post(`${this.apiUrl}/auth/register/`, userData);
   }
 

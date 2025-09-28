@@ -27,11 +27,16 @@ export class Login {
       return;
     }
 
+    console.log('Attempting login with:', {
+      email: this.email,
+      role: this.role
+    });
+
     this.authService.login(this.email, this.password).subscribe({
       next: (res) => {
-        console.log('Login success:', res);
+        console.log(' Login success:', res);
 
-        // ✅ Save username and role from backend if provided
+        //  Save username and role from backend if provided
         if (res.username) {
           localStorage.setItem('username', res.username);
         }
@@ -45,18 +50,20 @@ export class Login {
           localStorage.setItem('role', this.role);
         }
 
-        // ✅ Redirect based on role
+        //  Redirect based on role
         if (this.role === 'merchant') {
+          console.log(' Redirecting to /dashboard');
           this.router.navigate(['/dashboard']);
         } else if (this.role === 'admin') {
+          console.log(' Redirecting to /admin-dashboard');
           this.router.navigate(['/admin-dashboard']);
         } else {
-          // fallback
+          console.log(' Redirecting to default /dashboard');
           this.router.navigate(['/dashboard']);
         }
       },
       error: (err) => {
-        console.error('Login error:', err);
+        console.error(' Login error:', err);
         alert('Invalid email or password');
       }
     });
