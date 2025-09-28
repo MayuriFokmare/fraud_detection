@@ -8,6 +8,7 @@ import { Chart } from 'chart.js/auto';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { ButtonModule } from 'primeng/button';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -35,6 +36,8 @@ export class AdminDashboard implements OnInit {
   selectedFraudType: string = '';
   rows = 10;
 
+  private baseUrl = environment.apiUrl;   // ✅ dynamic API base URL
+
   @ViewChildren('fraudCanvas') fraudCanvasList!: QueryList<ElementRef<HTMLCanvasElement>>;
 
   constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
@@ -46,7 +49,7 @@ export class AdminDashboard implements OnInit {
   }
 
   loadFraudSummary() {
-    this.http.get<any[]>('http://127.0.0.1:8000/api/admin-dashboard/fraud-summary/')
+    this.http.get<any[]>(`${this.baseUrl}/admin-dashboard/fraud-summary/`)
       .subscribe(res => {
         this.fraudSummary = res;
         this.cdr.detectChanges();
@@ -55,7 +58,7 @@ export class AdminDashboard implements OnInit {
   }
 
   loadMerchantFraud() {
-    this.http.get<any[]>('http://127.0.0.1:8000/api/admin-dashboard/merchant-fraud/')
+    this.http.get<any[]>(`${this.baseUrl}/admin-dashboard/merchant-fraud/`)
       .subscribe(res => {
         this.merchantFraud = res;
         this.cdr.detectChanges();
@@ -64,7 +67,7 @@ export class AdminDashboard implements OnInit {
   }
 
   loadFraudulentRecords() {
-    this.http.get<any[]>('http://127.0.0.1:8000/api/admin-dashboard/fraudulent-records/')
+    this.http.get<any[]>(`${this.baseUrl}/admin-dashboard/fraudulent-records/`)
       .subscribe(res => {
         this.fraudulentRecords = res;
         this.filteredRecords = [...this.fraudulentRecords];

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FraudDetection {
-  private baseUrl = 'http://127.0.0.1:8000/api';
-  private predictUrl = 'http://127.0.0.1:8000/api/predict-upload';
+  private baseUrl = environment.apiUrl;
+  private predictUrl = `${this.baseUrl}/predict-upload`;
 
   constructor(private http: HttpClient) {}
 
@@ -26,55 +27,59 @@ export class FraudDetection {
     return this.http.post(`${this.baseUrl}/close/`, {});
   }
 
-  getMetrics() {
-  return this.http.get<any[]>('http://127.0.0.1:8000/api/fraud-detection/metrics/');
-}
+  // Fetch metrics
+  getMetrics(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/fraud-detection/metrics/`);
+  }
 
-// fraud-detection.service.ts
-getFraudVsLegit(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.baseUrl}/analytics/fraud-vs-legit/`);
-}
+  // Fraud vs Legit analytics
+  getFraudVsLegit(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/analytics/fraud-vs-legit/`);
+  }
 
-getHourlyTransactions(): Observable<any[]> {
-  return this.http.get<any[]>(`${this.baseUrl}/analytics/hourly-transactions/`);
-}
+  // Hourly transactions
+  getHourlyTransactions(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/analytics/hourly-transactions/`);
+  }
 
-predictUpload(fraudType: string, file: File, username: string): Observable<any> {
+  // Predict upload (with fraud type + file + username)
+  predictUpload(fraudType: string, file: File, username: string): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
-    formData.append('username', username); // backend can use this
+    formData.append('username', username);
 
     return this.http.post(`${this.predictUrl}/${fraudType}/`, formData);
   }
 
-  //  Fetch summary
+  // Fetch summary
   getSummary(): Observable<any> {
     return this.http.get(`${this.baseUrl}/temp-summary/`);
   }
 
-  //  Clear temp table
+  // Clear temp table
   clearTemp(): Observable<any> {
     return this.http.post(`${this.baseUrl}/clear-temp/`, {});
   }
 
-  //  Upload file + fraud type + merchant name
-uploadFile(fraudType: string, merchantName: string, file: File): Observable<any> {
-  const formData = new FormData();
-  formData.append('fraud_type', fraudType);
-  formData.append('merchant_name', merchantName);
-  formData.append('file', file);
+  // Upload file + fraud type + merchant name
+  uploadFile(fraudType: string, merchantName: string, file: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('fraud_type', fraudType);
+    formData.append('merchant_name', merchantName);
+    formData.append('file', file);
 
-  return this.http.post(`${this.baseUrl}/predict-upload/`, formData);
-}
+    return this.http.post(`${this.baseUrl}/predict-upload/`, formData);
+  }
 
-getCategorySummary() {
-  return this.http.get<any[]>('http://127.0.0.1:8000/api/temp-category/');
-}
+  // Category summary
+  getCategorySummary(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.baseUrl}/temp-category/`);
+  }
 
-getMerchantFraudSummary(merchant: string) {
-  return this.http.get<any>(
-    `http://127.0.0.1:8000/api/merchant-fraud-summary/?merchant=${merchant}`
-  );
-}
-
+  // Merchant fraud summary
+  getMerchantFraudSummary(merchant: string): Observable<any> {
+    return this.http.get<any>(
+      `${this.baseUrl}/merchant-fraud-summary/?merchant=${merchant}`
+    );
+  }
 }
