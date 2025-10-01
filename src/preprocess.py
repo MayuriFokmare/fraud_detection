@@ -23,7 +23,7 @@ def basic_clean(df: pd.DataFrame) -> pd.DataFrame:
 
 def split_features_target(df: pd.DataFrame, target_col: str) -> Tuple[pd.DataFrame, pd.Series]:
     y = df[target_col]
-    if y.dtype == "object":  # convert strings to binary
+    if y.dtype == "object":  
         y = y.astype(str).str.strip().str.lower().map(
             lambda v: 1 if v in {"1", "true", "yes", "cg", "fraud", "fraudulent"} else 0
         )
@@ -56,13 +56,13 @@ def build_preprocessor(numeric_cols: List[str], categorical_cols: List[str], tex
     if categorical_cols:
         transformers.append(("cat", categorical_pipeline, categorical_cols))
     if text_cols:
-        transformers.append(("text", text_pipeline, text_cols[0]))  # assume 1 text col
+        transformers.append(("text", text_pipeline, text_cols[0]))  
 
     preprocessor = ColumnTransformer(transformers)
     return preprocessor
 
 # ==============================
-# Dataset-specific loaders
+# Dataset specific loaders
 # ==============================
 def load_fake_review(path="data/fake_review/processed/fake_reviews.csv"):
     df = basic_clean(load_csv(path))
@@ -76,14 +76,12 @@ def load_payment(path="data/payment/processed/payment.csv"):
 
 def load_chargeback(path="data/chargeback/processed/df.csv"):
     df = basic_clean(load_csv(path))
-    # make sure the fraud column is named "label" or adjust here
     target_col = "label" if "label" in df.columns else df.columns[-1]
     X, y = split_features_target(df, target_col)
     return X, y
 
 def load_merchant(path="data/merchant/processed/Fraudulent_online_shops_dataset.csv"):
     df = basic_clean(load_csv(path))
-    # adjust target column name if needed (e.g., "fraudulent" or "is_fraud")
     target_col = "label" if "label" in df.columns else "fraudulent"
     X, y = split_features_target(df, target_col)
     return X, y
