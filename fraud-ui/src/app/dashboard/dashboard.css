@@ -328,7 +328,6 @@
 }
 
 
-/* Summary cards (post-detection) - align side by side with even spacing */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -336,16 +335,14 @@
   margin: 20px 0;
 }
 
-/* Donut and cards wrapper (top row)  spacing top/bottom */
 .top-row {
   margin-top: 30px;
   margin-bottom: 40px;
 }
 
-/* Bottom row (comparison + transactions) */
 .bottom-row {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* side by side */
+  grid-template-columns: 1fr 1fr; 
   gap: 30px;
   margin-top: 40px;
   align-items: start;
@@ -454,7 +451,6 @@
   background-color: #c0392b;
 }
 
-/* Ensure bottom-row has margin so button isn’t pushed off-screen */
 .bottom-row {
   margin-bottom: 20px;
 }
