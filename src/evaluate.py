@@ -21,7 +21,7 @@ def evaluate_and_report(models: dict, X_test, y_test, reports_dir: str):
         y_pred = model.predict(X_test)
         y_proba = model.predict_proba(X_test)[:, 1]
 
-        model_preds[name] = y_pred  # store for diversity/ensemble analysis
+        model_preds[name] = y_pred 
 
         # Metrics
         acc = accuracy_score(y_test, y_pred)
@@ -38,7 +38,7 @@ def evaluate_and_report(models: dict, X_test, y_test, reports_dir: str):
             "roc_auc": auc
         }
 
-        # Save classification report
+        #  classification report
         with open(os.path.join(reports_dir, f"{name}_report.txt"), "w") as f:
             f.write(classification_report(y_test, y_pred))
 
@@ -55,7 +55,7 @@ def evaluate_and_report(models: dict, X_test, y_test, reports_dir: str):
     # Save overall summary
     pd.DataFrame(results).T.to_csv(os.path.join(reports_dir, "metrics_summary.csv"))
 
-    # 🔹 Additional ensemble/diversity analysis
+    # Additional ensemble/diversity analysis
     if len(model_preds) > 1:
         # Diversity heatmaps (green/red)
         plot_diversity(y_test.values, model_preds, reports_dir, "diversity")
