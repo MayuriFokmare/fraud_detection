@@ -7,24 +7,24 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 def run_ensembles(models: dict, X_test, y_test, out_dir: str):
     os.makedirs(out_dir, exist_ok=True)
 
-    # Collect predictions & probabilities
+    # predictions  probabilities
     preds = []
     probas = []
     for model in models.values():
         preds.append(model.predict(X_test))
         probas.append(model.predict_proba(X_test)[:, 1])
 
-    preds = np.vstack(preds)   # shape: (n_models, n_samples)
-    probas = np.vstack(probas) # shape: (n_models, n_samples)
+    preds = np.vstack(preds)   
+    probas = np.vstack(probas) 
 
-    # 🔹 Hard voting (majority)
+    #  Hard voting (majority)
     y_pred_majority = mode(preds, axis=0, keepdims=True).mode.flatten()
 
-    # 🔹 Soft voting (average probabilities)
+    #  Soft voting (average probabilities)
     y_proba_avg = np.mean(probas, axis=0)
     y_pred_soft = (y_proba_avg >= 0.5).astype(int)
 
-    # 🔹 Metrics
+    #  Metrics
     results = {
         "majority_vote": {
             "accuracy": accuracy_score(y_test, y_pred_majority),
@@ -42,7 +42,7 @@ def run_ensembles(models: dict, X_test, y_test, out_dir: str):
         }
     }
 
-    # Save ensemble metrics
+    #  ensemble metrics
     pd.DataFrame(results).to_csv(os.path.join(out_dir, "ensemble_metrics.csv"))
     logging.info("Ensemble metrics saved at %s", os.path.join(out_dir, "ensemble_metrics.csv"))
 
