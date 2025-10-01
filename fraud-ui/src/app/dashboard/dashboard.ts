@@ -66,8 +66,8 @@ export class Dashboard implements OnInit, OnDestroy {
   merchantSummary: MerchantFraudSummary | null = null;
   loading = false;
 
-  private donutChart: Chart | null = null;            // post-detection donut
-  private merchantDonutChart: Chart | null = null;    // pre-detection donut
+  private donutChart: Chart | null = null;            
+  private merchantDonutChart: Chart | null = null;    
   private barChart: Chart | null = null;
   private destroy$ = new Subject<void>();
 
