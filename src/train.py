@@ -54,7 +54,7 @@ def train_all(base_exp_dir="experiments"):
     for fraud_type, loader in datasets.items():
         logging.info("=== Training for %s fraud ===", fraud_type)
 
-        # Load & split
+        # Load  split
         X, y = loader()
         X_train, X_test, y_train, y_test = split_data(X, y)
 
