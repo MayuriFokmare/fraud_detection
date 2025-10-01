@@ -70,7 +70,6 @@ def plot_diversity(y_true, model_preds: dict, out_dir: str, name: str):
     df = pd.DataFrame(model_preds)
     df["true"] = y_true
 
-    # Fraud subset → green
     fraud = df[df["true"] == 1].drop(columns="true")
     plt.figure(figsize=(10,6))
     sns.heatmap(fraud.T, cmap=["white","green"], cbar=False)
@@ -81,7 +80,6 @@ def plot_diversity(y_true, model_preds: dict, out_dir: str, name: str):
     plt.savefig(path_fraud, bbox_inches="tight")
     plt.close()
 
-    # Legit subset → red
     legit = df[df["true"] == 0].drop(columns="true")
     plt.figure(figsize=(10,6))
     sns.heatmap(legit.T, cmap=["white","red"], cbar=False)
