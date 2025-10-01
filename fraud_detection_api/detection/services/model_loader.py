@@ -2,7 +2,6 @@ import os
 import joblib
 from django.conf import settings
 
-# Go one level up from Django project (fraud_detection_api → fraud_detection)
 ML_BASE_DIR = os.path.abspath(os.path.join(settings.BASE_DIR, "..", "experiments"))
 
 def load_model(fraud_type: str, model_name: str):
